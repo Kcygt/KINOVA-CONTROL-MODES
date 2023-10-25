@@ -195,7 +195,7 @@ bool torqueControl(k_api::Base::BaseClient* base, k_api::BaseCyclic::BaseCyclicC
     double s = 0.0;
     double sDot = 0.0;
     double tBlend = 1.0;
-    double tFinal = 3.0;
+    double tFinal = tDuration / 10e9;
     double W = (alpha + 1) / (tBlend * (tFinal - tBlend));
     int iterationNumber = 3;
 
