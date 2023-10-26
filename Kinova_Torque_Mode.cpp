@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -435,6 +434,8 @@ bool torqueControl(k_api::Base::BaseClient* base, k_api::BaseCyclic::BaseCyclicC
             // Integrate the desired joint velocity assuming constant velocity over h seconds
             // TODO Calculate the exact duration of a single iteration and use it in the integration
             qd += qpd * static_cast<double>(h.count()) * 1e-9;
+            
+            
             SicilianoT = robot.forwardKinematics(qd); // FK for Bruno Siciliano
             SicilianoT_log = SicilianoT.translation();
             pathx << -P_z, 0.0, P_x;
